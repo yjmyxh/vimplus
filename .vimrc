@@ -20,7 +20,9 @@ filetype on
 " 根据侦测到的不同类型加载对应的插件
 filetype plugin on
 " 不让vim发出讨厌的滴滴声
-set noerrorbells
+"set noerrorbells
+"关闭所有提示音
+set belloff=all
 " 不要使用vi的键盘模式，使用vim自己的
 set nocompatible
 " 去掉输入错误的提示
@@ -31,7 +33,8 @@ set report=0
 set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
-
+"使用系统剪切版
+set clipboard=unnamed
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 显示设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,7 +113,8 @@ set history=1000
 set nowrap
 " 使用回格键正常处理indent,eol,start等
 set backspace=2
-
+"禁止换行自动注释
+set paste
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 搜索设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -255,6 +259,8 @@ map <Leader>n :NERDTreeToggle<CR>
 imap <Leader>n <ESC> :NERDTreeToggle<CR>
 "autocmd vimenter * if !argc() | NERDTree | endif
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"
+
 
 " Doxygen
 let g:DoxygenToolkit_authorName="chxuan, 787280310@qq.com"
